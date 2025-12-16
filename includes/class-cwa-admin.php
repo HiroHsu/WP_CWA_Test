@@ -22,14 +22,14 @@ class CWA_Admin {
      *
      * @var string
      */
-    private const OPTION_NAME = 'cwa_weather_alert_options';
+    private static $option_name = 'cwa_weather_alert_options';
 
     /**
      * 選項群組
      *
      * @var string
      */
-    private const OPTION_GROUP = 'cwa_weather_alert_settings';
+    private static $option_group = 'cwa_weather_alert_settings';
 
     /**
      * 單例實例
@@ -116,8 +116,8 @@ class CWA_Admin {
      */
     public function register_settings() {
         register_setting(
-            self::OPTION_GROUP,
-            self::OPTION_NAME,
+            self::$option_group,
+            self::$option_name,
             array(
                 'type'              => 'array',
                 'sanitize_callback' => array( $this, 'sanitize_options' ),
@@ -209,11 +209,11 @@ class CWA_Admin {
      * 渲染 API Key 輸入欄位
      */
     public function render_api_key_field() {
-        $options = get_option( self::OPTION_NAME, array() );
+        $options = get_option( self::$option_name, array() );
         $api_key = isset( $options['api_key'] ) ? $options['api_key'] : '';
         ?>
         <input type="text" 
-               name="<?php echo esc_attr( self::OPTION_NAME ); ?>[api_key]" 
+               name="<?php echo esc_attr( self::$option_name ); ?>[api_key]" 
                id="cwa_api_key"
                value="<?php echo esc_attr( $api_key ); ?>" 
                class="regular-text"
@@ -233,10 +233,10 @@ class CWA_Admin {
      * 渲染快取時間欄位
      */
     public function render_cache_time_field() {
-        $options    = get_option( self::OPTION_NAME, array() );
+        $options    = get_option( self::$option_name, array() );
         $cache_time = isset( $options['cache_time'] ) ? $options['cache_time'] : 1800;
         ?>
-        <select name="<?php echo esc_attr( self::OPTION_NAME ); ?>[cache_time]" id="cwa_cache_time">
+        <select name="<?php echo esc_attr( self::$option_name ); ?>[cache_time]" id="cwa_cache_time">
             <option value="300" <?php selected( $cache_time, 300 ); ?>>
                 <?php esc_html_e( '5 分鐘', 'cwa-weather-alert' ); ?>
             </option>
@@ -326,7 +326,7 @@ class CWA_Admin {
             
             <form action="options.php" method="post">
                 <?php
-                settings_fields( self::OPTION_GROUP );
+                settings_fields( self::$option_group );
                 do_settings_sections( 'cwa-weather-alert' );
                 submit_button( __( '儲存設定', 'cwa-weather-alert' ) );
                 ?>

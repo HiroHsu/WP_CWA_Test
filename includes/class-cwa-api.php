@@ -22,14 +22,14 @@ class CWA_API {
      *
      * @var string
      */
-    private const API_BASE_URL = 'https://opendata.cwa.gov.tw/api/v1/rest/datastore/W-C0033-001';
+    private static $api_base_url = 'https://opendata.cwa.gov.tw/api/v1/rest/datastore/W-C0033-001';
 
     /**
      * 快取鍵名
      *
      * @var string
      */
-    private const CACHE_KEY = 'cwa_weather_alert_data';
+    private static $cache_key = 'cwa_weather_alert_data';
 
     /**
      * 單例實例
@@ -94,7 +94,7 @@ class CWA_API {
         }
 
         // 嘗試從快取取得資料
-        $cache_key = self::CACHE_KEY;
+        $cache_key = self::$cache_key;
         if ( $location ) {
             $cache_key .= '_' . md5( $location );
         }
@@ -110,7 +110,7 @@ class CWA_API {
                 'Authorization' => $api_key,
                 'format'        => 'JSON',
             ),
-            self::API_BASE_URL
+            self::$api_base_url
         );
 
         if ( $location ) {
@@ -257,8 +257,8 @@ class CWA_API {
         $wpdb->query(
             $wpdb->prepare(
                 "DELETE FROM {$wpdb->options} WHERE option_name LIKE %s OR option_name LIKE %s",
-                '_transient_' . self::CACHE_KEY . '%',
-                '_transient_timeout_' . self::CACHE_KEY . '%'
+                '_transient_' . self::$cache_key . '%',
+                '_transient_timeout_' . self::$cache_key . '%'
             )
         );
 
@@ -278,7 +278,7 @@ class CWA_API {
                 'format'        => 'JSON',
                 'limit'         => 1,
             ),
-            self::API_BASE_URL
+            self::$api_base_url
         );
 
         $response = wp_remote_get(

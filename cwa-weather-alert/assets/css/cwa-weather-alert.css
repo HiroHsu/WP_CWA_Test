@@ -1,0 +1,299 @@
+/**
+ * CWA Weather Alert - 前台樣式
+ *
+ * @package CWA_Weather_Alert
+ */
+
+/* ========================================
+   主容器
+   ======================================== */
+.cwa-weather-alerts {
+    --cwa-primary: #1e3a5f;
+    --cwa-secondary: #3498db;
+    --cwa-success: #27ae60;
+    --cwa-warning: #f39c12;
+    --cwa-danger: #e74c3c;
+    --cwa-light: #f8f9fa;
+    --cwa-dark: #2c3e50;
+    --cwa-border: #dee2e6;
+    --cwa-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --cwa-radius: 8px;
+
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: linear-gradient(135deg, var(--cwa-primary) 0%, var(--cwa-secondary) 100%);
+    border-radius: var(--cwa-radius);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    color: #fff;
+}
+
+/* ========================================
+   標題區域
+   ======================================== */
+.cwa-alerts-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cwa-alerts-title {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.cwa-icon {
+    font-size: 1.5rem;
+}
+
+.cwa-update-time {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+/* ========================================
+   警報列表
+   ======================================== */
+.cwa-alerts-list {
+    display: grid;
+    gap: 1rem;
+}
+
+/* ========================================
+   警報卡片
+   ======================================== */
+.cwa-alert-card {
+    background: #fff;
+    border-radius: var(--cwa-radius);
+    box-shadow: var(--cwa-shadow);
+    overflow: hidden;
+    color: var(--cwa-dark);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cwa-alert-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* 警報卡片標題 */
+.cwa-alert-header {
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+}
+
+.cwa-alert-icon {
+    font-size: 1.25rem;
+}
+
+.cwa-alert-type {
+    font-size: 1rem;
+}
+
+/* 嚴重程度樣式 */
+.cwa-severity-high .cwa-alert-header {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    color: #fff;
+}
+
+.cwa-severity-medium .cwa-alert-header {
+    background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+    color: #fff;
+}
+
+.cwa-severity-low .cwa-alert-header {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    color: #fff;
+}
+
+/* 警報內容 */
+.cwa-alert-content {
+    padding: 1rem;
+}
+
+.cwa-alert-location,
+.cwa-alert-affected,
+.cwa-alert-time {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.cwa-alert-location:last-child,
+.cwa-alert-affected:last-child,
+.cwa-alert-time:last-child {
+    margin-bottom: 0;
+}
+
+.cwa-alert-content strong {
+    color: var(--cwa-primary);
+}
+
+.cwa-time-start,
+.cwa-time-end {
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+/* ========================================
+   無警報狀態
+   ======================================== */
+.cwa-no-alerts {
+    background: linear-gradient(135deg, var(--cwa-success) 0%, #219a52 100%);
+}
+
+.cwa-no-alerts-message {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+.cwa-no-alerts-message p {
+    margin: 0;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* ========================================
+   錯誤訊息
+   ======================================== */
+.cwa-weather-alert-error {
+    background: var(--cwa-danger);
+    color: #fff;
+    padding: 1rem;
+    border-radius: var(--cwa-radius);
+    margin: 1rem 0;
+}
+
+/* ========================================
+   響應式設計
+   ======================================== */
+@media (max-width: 768px) {
+    .cwa-weather-alerts {
+        padding: 1rem;
+    }
+
+    .cwa-alerts-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cwa-alerts-title {
+        font-size: 1.1rem;
+    }
+
+    .cwa-alert-content {
+        padding: 0.75rem;
+    }
+
+    .cwa-time-start,
+    .cwa-time-end {
+        display: block;
+        margin-right: 0;
+        margin-bottom: 0.25rem;
+    }
+}
+
+/* ========================================
+   後台預覽樣式
+   ======================================== */
+.cwa-alerts-preview {
+    max-width: 800px;
+}
+
+.cwa-usage-info {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: var(--cwa-radius);
+    border: 1px solid var(--cwa-border);
+    margin-top: 1rem;
+}
+
+.cwa-usage-info h4 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--cwa-primary);
+}
+
+.cwa-usage-info code {
+    background: #f4f4f4;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    font-size: 0.9em;
+}
+
+/* 後台按鈕間距 */
+#cwa-test-connection,
+#cwa-clear-cache {
+    margin-left: 10px;
+}
+
+#cwa-test-result,
+#cwa-cache-result {
+    margin-left: 10px;
+    font-weight: 500;
+}
+
+#cwa-test-result.success,
+#cwa-cache-result.success {
+    color: var(--cwa-success);
+}
+
+#cwa-test-result.error,
+#cwa-cache-result.error {
+    color: var(--cwa-danger);
+}
+
+/* ========================================
+   動畫效果
+   ======================================== */
+@keyframes cwa-pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.cwa-severity-high .cwa-alert-icon {
+    animation: cwa-pulse 1.5s ease-in-out infinite;
+}
+
+/* ========================================
+   列印樣式
+   ======================================== */
+@media print {
+    .cwa-weather-alerts {
+        background: #fff !important;
+        color: #000 !important;
+        border: 2px solid #000;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .cwa-alert-card {
+        break-inside: avoid;
+        border: 1px solid #ccc;
+    }
+
+    .cwa-severity-high .cwa-alert-header,
+    .cwa-severity-medium .cwa-alert-header,
+    .cwa-severity-low .cwa-alert-header {
+        background: #f0f0f0 !important;
+        color: #000 !important;
+    }
+}

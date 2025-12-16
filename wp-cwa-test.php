@@ -1,14 +1,14 @@
 <?php
 /**
  * Plugin Name: 台灣天氣警示
- * Plugin URI: https://github.com/example/cwa-weather-alert
+ * Plugin URI: https://github.com/HiroHsu/WP_CWA_Test
  * Description: 顯示中央氣象署天氣警特報資訊，使用 API W-C0033-001
  * Version: 1.0.0
- * Author: WordPress Developer
- * Author URI: https://example.com
+ * Author: Hiro Hsu
+ * Author URI: https://github.com/HiroHsu
  * License: GPL v2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain: cwa-weather-alert
+ * Text Domain: wp-cwa-test
  * Domain Path: /languages
  * Requires at least: 5.0
  * Requires PHP: 7.4

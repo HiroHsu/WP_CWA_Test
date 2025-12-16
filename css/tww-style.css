@@ -1,0 +1,146 @@
+/* Container */
+.tww-container {
+    max-width: 100%;
+    margin: 20px 0;
+    font-family: 'Noto Sans TC', sans-serif;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+/* Header */
+.tww-header {
+    background-color: #f9fafb;
+    padding: 15px 20px;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tww-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #1f2937;
+    font-weight: 700;
+}
+
+.tww-count {
+    background-color: #ef4444;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* Grid Layout */
+.tww-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 16px;
+    padding: 20px;
+    background-color: #f3f4f6;
+}
+
+/* Card Styling */
+.tww-card {
+    background: #fff;
+    border-radius: 6px;
+    padding: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border-left: 4px solid #9ca3af;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Severity Colors */
+.tww-severity-normal {
+    border-left-color: #3b82f6; /* Blue */
+}
+
+.tww-severity-warning {
+    border-left-color: #f59e0b; /* Orange/Yellow */
+    background-color: #fffbeb;
+}
+
+.tww-severity-danger {
+    border-left-color: #ef4444; /* Red */
+    background-color: #fef2f2;
+}
+
+.tww-card-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.tww-phenomena {
+    background-color: #1f2937;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.tww-significance {
+    font-size: 0.85rem;
+    color: #4b5563;
+    font-weight: 600;
+}
+
+.tww-location {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 12px;
+}
+
+.tww-time {
+    font-size: 0.75rem;
+    color: #6b7280;
+    margin-top: auto;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    padding-top: 8px;
+}
+
+/* States */
+.tww-no-alerts {
+    padding: 40px;
+    text-align: center;
+    color: #059669;
+}
+
+.tww-icon-check {
+    width: 48px;
+    height: 48px;
+    background-color: #d1fae5;
+    color: #059669;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin: 0 auto 16px;
+}
+
+.tww-error-message {
+    padding: 15px;
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+    border-radius: 6px;
+    margin: 20px 0;
+}
+
+.tww-footer {
+    padding: 10px 20px;
+    font-size: 0.75rem;
+    color: #9ca3af;
+    text-align: right;
+    background-color: #f9fafb;
+    border-top: 1px solid #e5e7eb;
+}

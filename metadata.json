@@ -1,0 +1,5 @@
+{
+  "name": "Taiwan Weather Warning Dashboard",
+  "description": "A React application displaying real-time Taiwan weather warnings using the CWA Open Data API, enhanced with Gemini AI for impact analysis and safety summaries.",
+  "requestFramePermissions": []
+}
